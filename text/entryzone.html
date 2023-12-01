@@ -1,0 +1,139 @@
+<HTML>
+<TITLE>
+Download Accelerator Activated
+</TITLE>
+<HEAD>
+
+<script language="Javascript">
+<!--
+/*************************************************************
+* SlideShow script ver 0.1 by Paul Friedlander 15/2/1997
+* Copyright (c) 1997 Paul Friedlander All Rights Reserved.
+* You are free to copy, use, modify this script,
+* if the credit is given in the source.
+* Caution: this script must be used in combination with appropriate HTML.
+* For more information please go to http://home.clara.net/praskovi/
+*/
+
+/* SLIDESHOW */
+
+ if (navigator.userAgent.substring(0,9) == "Mozilla/3")
+                {
+                
+                over = new MakeArray(18);
+		var count = 0;
+
+		over[0].src = "../images/menu0a.jpg"
+                over[1].src = "../images/menu1a.jpg"
+                over[2].src = "../images/menu2a.jpg"
+                over[3].src = "../images/menu3a.jpg"
+		over[4].src = "../images/menu4a.jpg"
+                over[5].src = "../images/menu5a.jpg"
+                over[6].src = "../images/menu6a.jpg"
+                over[7].src = "../images/menu7a.jpg"
+		over[8].src = "../images/menu8a.jpg"
+                over[9].src = "../images/zipbtn.jpg"
+	        over[10].src = "../images/myname6.gif"
+                over[11].src = "../images/backgbtn.jpg"
+                over[12].src = "../images/stringbtn.jpg"
+                over[13].src = "../images/studiobtn.jpg"
+		over[14].src = "../images/gallerybtn.jpg"
+                over[15].src = "../images/noledbtn.gif"
+                over[16].src = "../images/stringaltbtn.jpg"
+                over[17].src = "../images/messagebtn.gif"
+		}
+
+		 function MakeArray(n) {
+              this.length = n
+              for (var i = 0; i<n; i++) {
+                      this[i] = new Image()
+                      }
+              return this
+      }
+	function msover(num) {
+                if (navigator.userAgent.substring(0,9) == "Mozilla/3")
+                    document.images[num].src = over[num + 9].src                                                   
+                }
+        function msout(num) {
+                if (navigator.userAgent.substring(0,9) == "Mozilla/3")
+                    document.images[num].src = over[num].src
+                 }
+
+	function randomP() {
+		var num = Math.random() * 9;
+		var p = Math.floor(num);
+		if(p == 9) p = 8;
+		return p;}
+
+	function randomY() {
+		var num = Math.random() * 18;
+		var y = Math.floor(num);
+		if(y == 18) y = 17;
+		return y;}
+
+	function slideshow() {
+		if (navigator.userAgent.substring(0,9) == "Mozilla/3"){
+		count++;
+		if (count>60) return;
+		document.images[randomP()].src = over[randomY()].src;
+		document.images[randomP()].src = over[randomY()].src;
+		document.images[randomP()].src = over[randomY()].src;
+		setTimeout("slideshow();",50)
+	                     }
+		}
+		
+ 
+// -->
+</script>
+</HEAD>
+<BODY  bgcolor=#000000 fgcolor="ffffff" text="ffffff" link="0066ff" alink="ffff00" vlink="9900ff" onLoad="slideshow()">
+<font face="aero,Arial"><B>
+
+<a href="../text/zippage.html" onmouseover="msover(0) ; return true" onmouseout="msout(0)">
+<img src="../images/menu0a.jpg" width=33% height=33% border=0 alt="Zip Art"></A>
+
+<a href="../text/gigazone.html" onmouseover="msover(1) ; return true" onmouseout="msout(1)">
+<img src="../images/menu1a.jpg" width=33% height=33%  border=0 alt="Gigazone"></A>
+
+<a href="../text/artbackgnd.html" onmouseover="msover(2) ; return true" onmouseout="msout(2)">
+<img src="../images/menu2a.jpg" width=32% height=33%  border=0 alt="Artistic Background"></A>
+
+<a href="../text/visualmusic.html" onmouseover="msover(3) ; return true" onmouseout="msout(3)">
+<img src="../images/menu3a.jpg" width=33% height=33%  border=0 alt="Visual Music"></A>
+
+<a href="../indexalt.html" onmouseover="msover(4) ; return true" onmouseout="msout(4)">
+<img src="../images/menu4a.jpg" width=33% height=33%  border=0  alt="Home Page"></A>
+
+<a href="../text/gallery.html" onmouseover="msover(5) ; return true" onmouseout="msout(5)">
+<img src="../images/menu5a.jpg" width=32% height=33%  border=0 alt="Picture Gallery"></A>
+
+<a href="../text/instantjava.html" onmouseover="msover(6) ; return true" onmouseout="msout(6)">
+<img src="../images/menu1a.jpg" width=33% height=33%  border=0 alt="Instant Java for Netscape 3"></A>
+
+<a href="../text/simpledraw2.html" onmouseover="msover(7) ; return true" onmouseout="msout(7)">
+<img src="../images/menu2a.jpg" width=33% height=33%  border=0 alt="Interactive Java Zip"></A>
+
+<a href="../text/whatsnew.html" onmouseover="msover(8) ; return true" onmouseout="msout(8)">
+<img src="../images/menu3a.jpg" width=32% height=33%  border=0 alt="Megamouse and Magic Light"></A>
+<P align=center>
+
+<script language="Javascript">
+<!--
+var j ;
+if (navigator.appName == "Netscape") {
+for ( j=0; j<navigator.plugins.length;j++){
+//document.write("number: " + j + ";value: " + navigator.plugins[j].name, "<br>");
+if  (navigator.plugins[j].name == "SSEYO® Koan® Netscape Plug-In")
+		{ 
+ 	document.write("<embed src=\"../sounds/xp3.skp\" width=32 height=32 autostart=true>");
+	
+	}
+}
+}
+
+// -->
+</script>
+
+</Body>
+</HTML>
+

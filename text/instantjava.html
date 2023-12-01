@@ -1,0 +1,127 @@
+<HTML>
+
+<TITLE>
+
+Instant Java
+
+</TITLE>
+
+<HEAD>
+
+<body bgcolor=#cceeff background="../images/bluechiplg.jpg" text="000055" link="0000ff" alink="ffff00" vlink="9900ff">
+
+</HEAD>
+
+<BODY><font face="arial"><B>
+
+<H1><P align=center>
+Instant Java
+</H1>
+
+If you are a web author and would like your Java Applets to open quickly, here is something you will want to know.
+<P>
+Even if you do not write Java, but use ready made applets on your web pages, there is a technique for insuring that surfers will no longer have to wait for your applets to load.
+<P>
+You don't need to be programmer, here is how to do it.
+<P align=center >
+<img src="../images/horizline.gif" >
+<P>
+The concept is that time spent waiting for the applet to load can be hidden from the surfer while they are otherwise occupied. The applet is 'preloaded' in the background the moment the surfer arrivers at your web site and by the time the surfer gets to the applet page, it is ready to run. If you have applets on your home page, consider whether they could not be replaced with GIF animations or Javascript, both of which can load quickly.
+<P>
+This method requires a little coding in HTML and Javascript. All the details are given here and you are free to copy them so long as you include my copyright notice as shown.
+<P>
+Your first task is to create a frameset, this will act as a container into which you put your existing home page and the hidden applet or applets. This is what your index.html file will look like, you can select and copy and save this text now:
+<P><font face="courier">
+///////////////////////////////////////////////////////////////////////////////////////
+<P>
+
+&#60HTML&#62<br>
+&#60TITLE>
+"Your title"
+&#60/TITLE><br>
+&#60HEAD>
+"Your head"
+&#60/HEAD><P>
+
+	&#60FRAMESET ROWS="100%,*" FRAMESPACING="0" FRAMEBORDER="no" BORDER="0" ><br>
+ 		&#60FRAME   src="indexalt.html" NAME="mainpage"><br>
+	
+	&#60FRAME   src="empty.html" NAME="hiddenjava" <br>
+	SCROLLING="NO"><br>
+	&#60/FRAMESET><P>
+
+
+&#60NOFRAMES><br>
+&#60H3>&#60P align=center><br>
+Surfer Information.&#60P align=center><br>
+Your browser does not support frames. &#60P align=center><br>
+Click &#60A href="indexalt.html">HERE&#60/A> to continue.<br>
+&#60/NOFRAMES><p>
+
+
+&#60/HTML><P>
+//////////////////////////////////////////////////////////////////////////////////////////
+<P><font face="arial">
+The frameset is invisible to the surfer as the top row is set to 100%, frame spacing and border is set to nought.
+<P>
+You will need to rename your index file indexalt.html and make changes wherever else in your site it is referenced. [ If any links back to your home page are left as index.html, multiple instances of index.html will load inside each other with unpredictable consequences.] If you are using frames elsewhere on your site and use TARGET="_top", change this to TARGET="mainpage" . The empty file needs to only look like this:
+<P>
+&#60HTML&#62<br>
+&#60/HTML><P>
+<P>
+That will be sufficient to keep your browser happy. The remainder of the work is carried out by a javascript which should be placed in the head of you indexalt file. It looks like this.
+<P><font face="courier">
+//////////////////////////////////////////////////////////////////////////////////////////
+<P>
+
+&#60script language="JavaScript"><br>
+&#60!--				<p>
+/*************************************************************<BR>
+ * Instant Java script ver 0.1 by Paul Friedlander 14/2/1997<BR>
+ * Copyright (c) 1997 Paul Friedlander All Rights Reserved.<BR>
+ * You are free to copy, use, modify this script,<BR>
+ * if the credit is given in the source.<BR>
+ * Caution: this script must be used in combination with appropriate HTML.<BR>
+ * For more information please go to http://home.clara.net/praskovi/<BR>
+ */<BR>
+<P>
+
+
+		 /* preload javazip */<BR>
+ if ( (navigator.userAgent.substring(0,9) == "Mozilla/3") && (navigator.appName == "Netscape"))<BR>
+	open("text/javazip.html","hiddenjava");<BR>
+
+// -->									<BR>
+
+&#60/script><p>
+//////////////////////////////////////////////////////////////////////////////////////////
+<P>
+<font face="arial">
+The purpose of the script is to test what kind of browser the surfer is using.
+At this time, this method is only tested and proved safe with Netscape 3. ( Internet Explorer 3  will not respond to user input while the applet is loading. [ Future upgrades to this script will test for other safe browers.] If the Netscape 3 test is positive, a page containing java (in folder "text" on my web site.) is opened and placed in the hidden frame. It does not matter how large the applet is, the browser can create 'invisible space' without difficulty.
+<P>
+If you are using Netscape 3, while you have been reading this, my Java Zip applet has preloaded, go to it now and test my method.
+<P>
+Interactive <A href="../text/simpledraw2.html">Java Zip</A>
+<P>
+Paul Friedlander 14 February 1997.
+<P>
+E - mail  <A href=mailto:praskovi@clara.net>praskovi@clara.net</A>
+<p align=center>
+<A href="../text/gigazone.html">Gigazone</A>
+| <A href="../indexalt.html">home page</A>
+| <A href="../text/zippage.html">Zip Art</A>
+| <A href="../text/visualmusic.html">Visual Music</A>
+| <A href="../text/artbackgnd.html">Artistic Background</A>
+</p align=center>
+
+
+
+
+
+
+<P>
+
+</BODY>
+
+</HTML>
